@@ -8,6 +8,7 @@ export const sources = {
   },
   optimism: {
     "0x7D9c9B6861168b2fB180deE065f7F5dF601cd234": 105901387n,
+    "0x017637A1E5c815C442EDCc3A867Ad775ADADAa87": 109729769n,
   },
   zksync: {
     "0x4A14dA2A06715c5d9306Ca0502EDd7735961149E": 6680690n,
@@ -19,4 +20,7 @@ export const sources = {
   gnosis: {
     "0xEeBFDC7B498f14EA5640FFdeDA4eE3F3A4cD3545": 29708543n,
   },
+  scroll: {
+    "0x7419694a09c21fc4d75f461d348520f3e8a506f6": 311937n,
+  }
 } as const;
