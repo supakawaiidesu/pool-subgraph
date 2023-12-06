@@ -1,9 +1,7 @@
-import { onClosePosition } from "../handlers/close-position.ts";
-import { onNewOrder } from "../handlers/new-order.ts";
-import { onPositionUpdated } from "../handlers/position-updated.ts";
+import { onDeposit } from "../handlers/deposit.ts";
+import { onWithdraw } from "../handlers/withdraw.ts";
 
 export const eventHandlers = {
-  PositionUpdated: onPositionUpdated,
-  ClosePosition: onClosePosition,
-  NewOrder: onNewOrder,
+  Deposit: onDeposit,
+  Withdraw: onWithdraw,
 };
