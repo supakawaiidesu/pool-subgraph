@@ -4,8 +4,8 @@ export interface Withdraw {
   _id: string; // Unique identifier, can be a combination of transaction hash and log index
   user: string;
   currency: string;
-  amount: number;
-  clpAmount: number;
+  amount: string;
+  clpAmount: string;
   blockNumber: number;
   transactionHash: string;
 }
@@ -15,13 +15,14 @@ export const Withdraw = createEntity<Withdraw>("Withdraw", {
   user: "string",
   currency: "string",
   amount: {
-    type: "number",
+    type: "string",
     index: true,
   },
-  clpAmount: "number",
+  clpAmount: "string",
   blockNumber: {
     type: "number",
     index: true,
   },
   transactionHash: "string",
 });
+

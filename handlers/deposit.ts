@@ -7,15 +7,15 @@ export const onDeposit: EventHandlerFor<typeof POOL_ABI, "Deposit"> = async ({
 }) => {
   const { user, currency, amount, clpAmount } = event.args;
   const block = Number(event.blockNumber);
-  const id = `${event.transactionHash}:${block}:${event.transactionLogIndex}`;
+  const _id = `${event.transactionHash}:${block}:${event.transactionLogIndex}`;  // Use _id instead of id
 
   await Deposit.create({
-    id,
+    _id,  // Assign the generated _id here
     hash: event.transactionHash,
     block,
     user,
     currency,
-    amount,
-    clpAmount,
+    amount: amount.toString(), // Convert bigint to string
+    clpAmount: clpAmount.toString(), // Convert bigint to string
   });
 };
