@@ -9,7 +9,7 @@ export const onWithdraw: EventHandlerFor<typeof POOL_ABI, "Withdraw"> = async ({
   const block = Number(event.blockNumber);
   const id = `${event.transactionHash}:${block}:${event.transactionLogIndex}`;
 
-  await Withdraw.insertOne({
+  await Withdraw.create({
     id,
     hash: event.transactionHash,
     block,

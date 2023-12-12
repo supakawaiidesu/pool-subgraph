@@ -9,7 +9,7 @@ export const onDeposit: EventHandlerFor<typeof POOL_ABI, "Deposit"> = async ({
   const block = Number(event.blockNumber);
   const id = `${event.transactionHash}:${block}:${event.transactionLogIndex}`;
 
-  await Deposit.insertOne({
+  await Deposit.create({
     id,
     hash: event.transactionHash,
     block,
